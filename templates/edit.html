@@ -1,0 +1,40 @@
+{% extends 'parent.html' %}
+{% block title %}
+Edit student Details
+{% endblock %}
+{% block content %}
+<h4 align="center" id="std"><i>Edit Details</i></h4>
+<div class="container mt-3" id="bbox">
+    <br>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-2">
+  <label for="tname" class="form-label">UserName</label>
+  <input type="text" class="form-control" id="tname" name="tname" value="{{student.Name}}">
+</div>
+    <div class="mb-3">
+    <label for="tcourse" class="form-label">Course</label>
+   <select id="tcourse" name="tcourse" class="form-select form-control" aria-label="Default select example">
+    <option selected>{{student.Course}}</option>
+    {% for course in courses %}
+    <option>{{course.CourseName}}</option>
+    {% endfor %}
+</select>
+        </div >
+        <div class="mb-2">
+  <label for="tphone" class="form-label">Phone Number</label>
+  <input type="text" class="form-control" id="tphone" name="tphone" value="{{student.phoneNo}}">
+</div>
+            <div class="mb-2">
+  <label for="tmail" class="form-label">Email Id</label>
+  <input type="text" class="form-control" id="tmail" name="tmail" value="{{student.Email}}">
+</div>
+               <div class="mb-3">
+  <label for="tage" class="form-label">Age</label>
+  <input type="text" class="form-control" id="tage" name="tage" value="{{student.Age}}">
+</div>
+
+    <button class="btn btn-warning form-control">Update</button>
+</form>
+    </div>
+{% endblock %}

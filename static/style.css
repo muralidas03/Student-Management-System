@@ -1,0 +1,59 @@
+ <style>
+  {% block style %}
+  .bold{
+  font-weight: bold;
+  }
+  #navs{
+  background-color : rgb(40, 189, 189,0.6);
+  }
+	#tform{
+	 width:600px;
+	 height:500px;
+	}
+	.fa {
+  padding: 10px 10px 10px 10px;
+  font-size: 20px;
+  width: 35px;
+  text-align: center;
+  text-decoration: none;
+  margin: 1px 3px;
+  border-radius: 50%;
+}
+
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+  #bbox{
+  border : 1.5px solid black;
+  border-radius: 4px;
+  position:relative;
+  }
+  #std{
+    background-color : rgb(0,0,0);
+    color : white;
+    border : 1.5px solid black;
+    border-radius: 4px;
+    position:relative;
+    font-size : 20px;
+    width : 165px;
+    height : 25px;
+    position : absolute;
+    margin-top : 0.7rem;
+    margin-left: 150px;
+    padding-top : 0px;
+  }
+
+</style>

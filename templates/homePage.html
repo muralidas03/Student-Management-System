@@ -1,0 +1,39 @@
+{% extends 'parent.html' %}
+{% block title %}
+Student Details
+{% endblock %}
+{% block content %}
+<h4 align="center" id="std"><i>Student Details</i></h4>
+<div class="container mt-3" id="bbox">
+    <br>
+<table class="table">
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Course</th>
+        <th>Phone</th>
+        <th>Email</th>
+        <th>Age</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for student in studentsData %}
+    <tr>
+        <td>{{student.Name}}</td>
+        <td>{{student.Course}}</td>
+        <td>{{student.phoneNo}}</td>
+        <td>{{student.Email}}</td>
+        <td>{{student.Age}}</td>
+        <td><a class='btn btn-primary btn-sm' href="{% url 'edit' student.id %}"><i class="bi bi-pencil-square"></i> Update</a></td>
+        <td><a class='btn btn-danger btn-sm' href="{% url 'delete' student.id %}"><i class="bi bi-trash"></i> Delete</a></td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+    <br>
+    <p style="font-weight:1px;"><i>Row count : {{count}}</i></p>
+     </div>
+   <div class="container mt-3">
+    <a class="btn btn-success" href="{% url 'add' %}">Add Student</a>
+       </div>
+{% endblock %}

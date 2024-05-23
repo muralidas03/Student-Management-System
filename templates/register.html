@@ -1,0 +1,48 @@
+{% extends 'parent.html' %}
+{% block title %}
+Register Details
+{% endblock %}
+{% block navbar %}
+  <nav class="navbar navbar-expand-lg navbar-light mb-0">
+  <div class="container-fluid d-flex justify-content-center align-self-center">
+      <marquee width="60%" direction="left" height="75px">
+    <p class="navbar-brand text-dark bold">Welcome to Student Management System</p>
+      </marquee>
+  </div>
+</nav>
+{% endblock %}
+{% block content %}
+<h4 align="center" style="font-style:italic;">Register Details</h4>
+<div class="container p-3" id="tform">
+<form method="post">
+    {% csrf_token %}
+    {% if user_available %}
+    <b class="text-danger">Account already exists</b>
+    {% endif %}
+     <div class="mb-3">
+    <label for="exampleInputName" class="form-label">UserName</label>
+    <input type="text" class="form-control" id="exampleInputName" name="tname" aria-describedby="NameHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="tmail" aria-describedby="emailHelp">
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="tpassword" id="exampleInputPassword1">
+  </div>
+    Already have account? <a href="{% url 'loginFunc' %}">Login</a>
+    <div class="text-center">
+  <button type="submit" class="form-control btn btn-primary mt-4">Register</button>
+        </div>
+        <br><br>
+    <p align="center">Or Sign Up Using</p>
+        <div class="container-fluid d-flex justify-content-center align-self-center">
+            <a href="#"><i class="fa fa-facebook"></i></a>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+            <a href="#"><i class="fa fa-google"></i></a>
+        </div>
+</form>
+    </div>
+{% endblock %}
